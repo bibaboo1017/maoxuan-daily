@@ -4,6 +4,7 @@ from datetime import date, datetime, timedelta, timezone
 import html
 import json
 import os
+import re
 from pathlib import Path
 import sys
 import urllib.error
@@ -60,16 +61,19 @@ def write_state(path, state):
     temporary.replace(path)
 
 
-def send_once(q, day, token, state_path, opener=urllib.request.urlopen):
+def send_once(q, day, token, state_path, opener=urllib.request.urlopen, extra_id=None):
     state = json.loads(state_path.read_text(encoding="utf-8")) if state_path.exists() else {}
-    key = day.isoformat()
+    if extra_id is not None and not re.fullmatch(r'[A-Za-z0-9_-]{1,80}', extra_id):
+        raise ValueError('额外推送编号无效')
+    key = f"extra:{extra_id}" if extra_id else day.isoformat()
     if state.get(key, {}).get("status") in {"accepted", "pending", "unknown"}:
-        print("当天已提交，或上次提交结果不明；跳过以避免重复。请在 PushPlus 后台核对。")
+        print("本次消息已提交，或上次提交结果不明；跳过以避免重复。请在 PushPlus 后台核对。")
         return 0
-    record = {"quote_id": q["id"], "status": "pending"}
+    record = {"quote_id": q["id"], "status": "pending", "date": day.isoformat(),
+              "kind": "extra" if extra_id else "daily"}
     state[key] = record
     write_state(state_path, state)
-    payload = {"token": token, "title": f"毛选交易心态 · {key}",
+    payload = {"token": token, "title": f"毛选交易心态 · {day.isoformat()}",
                "content": render_text(q, day), "template": "txt", "channel": "wechat"}
     request = urllib.request.Request("https://www.pushplus.plus/send",
         data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
@@ -105,9 +109,13 @@ def main():
     parser.add_argument("--date", type=date.fromisoformat, help="仅预览时可指定日期")
     parser.add_argument("--output", type=Path, help="保存 HTML 预览")
     parser.add_argument("--state", type=Path, default=ROOT / "state" / "deliveries.json")
+    parser.add_argument("--extra-id", default=os.environ.get("EXTRA_PUSH_ID") or None,
+                        help="用户要求补推时的唯一编号；同编号重试不会重复提交")
     args = parser.parse_args()
     if args.send and args.date:
         parser.error("实际推送只能使用当天北京时间")
+    if args.extra_id and not re.fullmatch(r'[A-Za-z0-9_-]{1,80}', args.extra_id):
+        parser.error('额外推送编号无效')
     day = args.date or datetime.now(BEIJING).date()
     q = select_quote(load_quotes(), day)
     if args.output:
@@ -119,7 +127,7 @@ def main():
     if not token:
         print("缺少 GitHub Actions Secret：PUSHPLUS_TOKEN。", file=sys.stderr)
         return 1
-    return send_once(q, day, token, args.state)
+    return send_once(q, day, token, args.state, extra_id=args.extra_id)
 
 
 if __name__ == "__main__":
