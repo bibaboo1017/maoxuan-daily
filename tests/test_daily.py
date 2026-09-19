@@ -37,6 +37,9 @@ class DailyTests(unittest.TestCase):
             self.assertEqual(daily.send_once(self.quotes[0], self.day, "secret", self.state, server), 0)
         self.assertEqual(len(calls), 1)
         self.assertEqual(calls[0]["channel"], "wechat")
+        self.assertEqual(calls[0]["template"], "txt")
+        self.assertIn("交易心态应用（非原文）", calls[0]["content"])
+        self.assertNotIn("<blockquote>", calls[0]["content"])
         self.assertNotIn("secret", self.state.read_text())
         self.assertEqual(json.loads(self.state.read_text())[str(self.day)]["status"], "accepted")
 
@@ -68,6 +71,15 @@ class DailyTests(unittest.TestCase):
     def test_html_escaping(self):
         q = dict(self.quotes[0], quote="<script>alert(1)</script>")
         self.assertNotIn("<script>", daily.render(q, self.day))
+
+    def test_trading_scope_and_text_sources(self):
+        for q in self.quotes:
+            self.assertEqual(q['scope'], '交易心态')
+            self.assertTrue(q['theme'])
+            text = daily.render_text(q, self.day)
+            self.assertIn(q['source'], text)
+            self.assertIn(q['quote'], text)
+            self.assertIn('交易心态应用（非原文）', text)
 
 
 if __name__ == "__main__":
