@@ -3,5 +3,12 @@
     "quote_id": "study-2",
     "status": "accepted",
     "receipt": "a43b7d2b3b8d41bbaa9e8f475b9aac48"
+  },
+  "extra:35444326014": {
+    "quote_id": "mindset-40",
+    "status": "accepted",
+    "date": "2026-09-19",
+    "kind": "extra",
+    "receipt": "15f2907f70e64bda947d034fb24fcd17"
   }
 }
