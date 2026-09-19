@@ -35,12 +35,22 @@ def select_quote(quotes, day):
 
 def render(q, day):
     e = html.escape
-    return (f"<h2>毛选 · 每日一读｜{day.isoformat()}</h2>"
+    return (f"<h2>毛选 · 交易心态｜{day.isoformat()}</h2>"
             f"<blockquote>{e(q['quote'])}</blockquote>"
             f"<p>——《{e(q['work'])}》 · {e(q['written'])}</p>"
             f"<p><b>原文背景</b><br>{e(q['context'])}</p>"
-            f"<p><b>今日解读（编写者理解，非原文）</b><br>{e(q['reflection'])}</p>"
+            f"<p><b>交易心态应用（编写者理解，非原文）</b><br>{e(q['reflection'])}</p>"
             f"<p><a href=\"{e(q['source'], quote=True)}\">阅读原文与上下文</a></p>")
+
+
+def render_text(q, day):
+    return (f"毛选 · 交易心态｜{day.isoformat()}\n"
+            f"今日主题：{q.get('theme', '交易纪律')}\n\n"
+            f"原文：{q['quote']}\n"
+            f"——《{q['work']}》 · {q['written']}\n\n"
+            f"交易心态应用（非原文）：\n{q['reflection']}\n\n"
+            f"原文背景：{q['context']}\n"
+            f"出处：{q['source']}")
 
 
 def write_state(path, state):
@@ -59,8 +69,8 @@ def send_once(q, day, token, state_path, opener=urllib.request.urlopen):
     record = {"quote_id": q["id"], "status": "pending"}
     state[key] = record
     write_state(state_path, state)
-    payload = {"token": token, "title": f"毛选每日金句 · {key}",
-               "content": render(q, day), "template": "html", "channel": "wechat"}
+    payload = {"token": token, "title": f"毛选交易心态 · {key}",
+               "content": render_text(q, day), "template": "txt", "channel": "wechat"}
     request = urllib.request.Request("https://www.pushplus.plus/send",
         data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
         headers={"Content-Type": "application/json"}, method="POST")
@@ -103,7 +113,7 @@ def main():
     if args.output:
         args.output.write_text('<!doctype html><meta charset="utf-8">' + render(q, day), encoding="utf-8")
     if not args.send:
-        print(render(q, day))
+        print(render_text(q, day))
         return 0
     token = os.environ.get("PUSHPLUS_TOKEN", "").strip()
     if not token:

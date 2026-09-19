@@ -1,12 +1,112 @@
 [
-  {"id":"investigation-1","quote":"没有调查，没有发言权","work":"反对本本主义","written":"1930年5月","source":"https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193005.htm","context":"文章第一节标题，针对不了解实际情况便发表判断的工作作风。","reflection":"今天遇到需要判断的事情，先列出已知事实和待核实之处，再下结论。"},
-  {"id":"practice-1","quote":"一切真知都是从直接经验发源的。","work":"实践论","written":"1937年7月","source":"https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193707.htm","context":"原文随后说明，个人也会通过他人积累的间接经验获得知识，并非要求一切亲自试过。","reflection":"学到一个新方法后，找一个小场景验证它，同时检查经验适用的条件。"},
-  {"id":"contradiction-1","quote":"不同质的矛盾，只有用不同质的方法才能解决。","work":"矛盾论","written":"1937年8月","source":"https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193708.htm","context":"原文讨论矛盾的特殊性，反对把固定公式套用于不同情况。","reflection":"先判断问题来自信息不足、资源不足还是目标冲突，再选择解决办法。"},
-  {"id":"committee-1","quote":"要把问题摆到桌面上来。","work":"党委会的工作方法","written":"1949年3月13日","source":"https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-19490313.htm","context":"十二条工作方法中的第二条，讨论集体内部如何公开沟通和处理分歧。","reflection":"把模糊的不满变成具体事实、影响和可执行的建议，与相关的人直接沟通。"},
-  {"id":"study-1","quote":"错误常常是正确的先导。","work":"改造我们的学习","written":"1941年5月19日","source":"https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-19410519.htm","context":"文章结尾在回顾走过的弯路后，提出改造学习方法的期待。","reflection":"今天挑一件做得不好的事，写下原因和下一次要改变的一个动作；错误需要复盘才能转化为经验。"},
-  {"id":"care-1","quote":"关心他人比关心自己为重","work":"反对自由主义","written":"1937年9月7日","source":"https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-19370907.htm","context":"原文末尾对共产党员提出的行为要求，此处为句中节选。","reflection":"在合作中多考虑一次自己的决定会怎样影响别人，并把这种考虑落实为具体帮助。"},
-  {"id":"investigation-2","quote":"注重调查！","work":"反对本本主义","written":"1930年5月","source":"https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193005.htm","context":"第一节强调调查实际情况，反对缺乏事实依据的议论。","reflection":"面对一个难题，今天去问一位亲历者，并核对一份原始材料。"},
-  {"id":"practice-2","quote":"认识从实践始","work":"实践论","written":"1937年7月","source":"https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193707.htm","context":"此处为句首节选；后文强调形成理论后仍须返回实践，接受检验并继续发展。","reflection":"把一个想法变成能观察结果的小实验，记录结果是否支持最初的判断。"},
-  {"id":"committee-2","quote":"先做学生，然后再做先生","work":"党委会的工作方法","written":"1949年3月13日","source":"https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-19490313.htm","context":"第四条中的分句，强调对不懂的事情请教下级，听取并分析意见。","reflection":"给建议之前，先请对方完整说明现场的条件和困难。"},
-  {"id":"study-2","quote":"理论和实际统一","work":"改造我们的学习","written":"1941年5月19日","source":"https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-19410519.htm","context":"文章讨论学习方法时提出的原则，批评学习与具体问题脱节。","reflection":"今天读到的一个概念，能帮助解释哪个现实问题？写出一个具体例子和它的适用边界。"}
+  {
+    "id": "investigation-1",
+    "quote": "没有调查，没有发言权",
+    "work": "反对本本主义",
+    "written": "1930年5月",
+    "source": "https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193005.htm",
+    "context": "文章第一节标题，针对不了解实际情况便发表判断的工作作风。",
+    "reflection": "看到群聊热议或突然拉升，先核对信息出处和自己的交易条件。害怕踏空不是买入理由；证据不足时允许自己不参与。",
+    "theme": "独立判断",
+    "scope": "交易心态"
+  },
+  {
+    "id": "practice-1",
+    "quote": "一切真知都是从直接经验发源的。",
+    "work": "实践论",
+    "written": "1937年7月",
+    "source": "https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193707.htm",
+    "context": "原文随后说明，个人也会通过他人积累的间接经验获得知识，并非要求一切亲自试过。",
+    "reflection": "一两次盈利不足以证明自己掌握了规律。用交易记录检查执行、回撤和成本，区分可重复的方法与偶然的好运。",
+    "theme": "克服过度自信",
+    "scope": "交易心态"
+  },
+  {
+    "id": "contradiction-1",
+    "quote": "不同质的矛盾，只有用不同质的方法才能解决。",
+    "work": "矛盾论",
+    "written": "1937年8月",
+    "source": "https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193708.htm",
+    "context": "原文讨论矛盾的特殊性，反对把固定公式套用于不同情况。",
+    "reflection": "市场环境改变时，先重新评估原有计划的适用条件。不要为了证明昨天的判断正确，强迫今天的行情符合预期。",
+    "theme": "接受市场变化",
+    "scope": "交易心态"
+  },
+  {
+    "id": "committee-1",
+    "quote": "要把问题摆到桌面上来。",
+    "work": "党委会的工作方法",
+    "written": "1949年3月13日",
+    "source": "https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-19490313.htm",
+    "context": "十二条工作方法中的第二条，讨论集体内部如何公开沟通和处理分歧。",
+    "reflection": "把持仓理由、失效条件和可承受的损失写清楚。亏损令人难受时，先核对事实和原定规则，避免用幻想替代判断。",
+    "theme": "面对亏损",
+    "scope": "交易心态"
+  },
+  {
+    "id": "study-1",
+    "quote": "错误常常是正确的先导。",
+    "work": "改造我们的学习",
+    "written": "1941年5月19日",
+    "source": "https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-19410519.htm",
+    "context": "文章结尾在回顾走过的弯路后，提出改造学习方法的期待。",
+    "reflection": "亏损后先暂停情绪化下单，复盘是执行偏差、判断错误还是正常波动。不要为了立刻回本，临时放大风险或频繁换股。",
+    "theme": "停止报复性交易",
+    "scope": "交易心态"
+  },
+  {
+    "id": "discipline-1",
+    "quote": "自己错了，也已经懂得，又不想改正",
+    "work": "反对自由主义",
+    "written": "1937年9月7日",
+    "source": "https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-19370907.htm",
+    "context": "《反对自由主义》第十一种表现中的节选，原文批评明知有错仍不改正的态度。",
+    "reflection": "发现自己违反交易计划时，记录偏差并纠正。不要因为已经付出时间和金钱，就替错误寻找继续坚持的理由。",
+    "theme": "知错能改",
+    "scope": "交易心态"
+  },
+  {
+    "id": "investigation-2",
+    "quote": "注重调查！",
+    "work": "反对本本主义",
+    "written": "1930年5月",
+    "source": "https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193005.htm",
+    "context": "第一节强调调查实际情况，反对缺乏事实依据的议论。",
+    "reflection": "交易机会可以错过，核实过程不要省略。条件尚未满足时，等待也是计划的一部分，不必靠不断下单证明自己在努力。",
+    "theme": "耐心等待",
+    "scope": "交易心态"
+  },
+  {
+    "id": "practice-2",
+    "quote": "认识从实践始",
+    "work": "实践论",
+    "written": "1937年7月",
+    "source": "https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193707.htm",
+    "context": "此处为句首节选；后文强调形成理论后仍须返回实践，接受检验并继续发展。",
+    "reflection": "把盘前判断当作待验证的假设，记录支持与反对的证据。实际表现不符合预期时，按事先的规则重新评估，避免只挑有利的信息。",
+    "theme": "尊重验证",
+    "scope": "交易心态"
+  },
+  {
+    "id": "committee-2",
+    "quote": "先做学生，然后再做先生",
+    "work": "党委会的工作方法",
+    "written": "1949年3月13日",
+    "source": "https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-19490313.htm",
+    "context": "第四条中的分句，强调对不懂的事情请教下级，听取并分析意见。",
+    "reflection": "连续盈利时也保留自己可能判断错的余地。听到不同看法先核实依据，不把一次盈亏当成能力高低的证明。",
+    "theme": "保持谦逊",
+    "scope": "交易心态"
+  },
+  {
+    "id": "study-2",
+    "quote": "理论和实际统一",
+    "work": "改造我们的学习",
+    "written": "1941年5月19日",
+    "source": "https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-19410519.htm",
+    "context": "文章讨论学习方法时提出的原则，批评学习与具体问题脱节。",
+    "reflection": "盘前写下参与条件、风险边界和退出依据，盘后检查执行是否一致。避免临盘因贪婪或恐惧，随意把短线计划改成长线理由。",
+    "theme": "执行一致",
+    "scope": "交易心态"
+  }
 ]
