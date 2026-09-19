@@ -1,0 +1,46 @@
+name: 毛选每日微信推送
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # UTC 00:00 = 北京时间 08:00，实际启动可能延迟
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: maoxuan-daily
+  cancel-in-progress: false
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 检查句库和发送逻辑
+        run: python -m unittest discover -s tests -v
+      - name: 提交每日消息
+        env:
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+        run: python daily.py --send
+      - name: 保存提交记录（失败时也保存，防止盲目重发）
+        if: always()
+        shell: bash
+        run: |
+          if [ -f state/deliveries.json ]; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add state/deliveries.json
+            if ! git diff --cached --quiet; then
+              git commit -m 'Record daily quote submission [skip ci]'
+              git push origin HEAD:"$DEFAULT_BRANCH"
+            fi
+          fi
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
