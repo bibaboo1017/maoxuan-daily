@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '0 0 * * *' # UTC 00:00 = 北京时间 08:00，实际启动可能延迟
   workflow_dispatch:
+    inputs:
+      send_extra:
+        description: '额外推送一次（今天已发过也发送）'
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -28,6 +34,7 @@ jobs:
       - name: 提交每日消息
         env:
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+          EXTRA_PUSH_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.send_extra && github.run_id || '' }}
         run: python daily.py --send
       - name: 保存提交记录（失败时也保存，防止盲目重发）
         if: always()
