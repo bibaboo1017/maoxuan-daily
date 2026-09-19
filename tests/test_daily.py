@@ -72,7 +72,32 @@ class DailyTests(unittest.TestCase):
         q = dict(self.quotes[0], quote="<script>alert(1)</script>")
         self.assertNotIn("<script>", daily.render(q, self.day))
 
+    def test_extra_push_is_separate_and_idempotent(self):
+        calls = []
+        def accepted(request, **kwargs):
+            calls.append(json.loads(request.data))
+            return io.BytesIO(b'{"code":200,"data":"receipt123"}')
+        daily.send_once(self.quotes[0], self.day, 'secret', self.state, accepted)
+        daily.send_once(self.quotes[1], self.day, 'secret', self.state, accepted, extra_id='run123')
+        daily.send_once(self.quotes[1], self.day, 'secret', self.state, accepted, extra_id='run123')
+        daily.send_once(self.quotes[0], self.day, 'secret', self.state, accepted)
+        self.assertEqual(len(calls), 2)
+        state = json.loads(self.state.read_text())
+        self.assertEqual(state[str(self.day)]['kind'], 'daily')
+        self.assertEqual(state['extra:run123']['kind'], 'extra')
+
+    def test_uncertain_extra_push_is_not_retried(self):
+        calls = []
+        def uncertain(*args, **kwargs):
+            calls.append(True)
+            raise TimeoutError()
+        daily.send_once(self.quotes[0], self.day, 'secret', self.state, uncertain, extra_id='run456')
+        daily.send_once(self.quotes[0], self.day, 'secret', self.state, uncertain, extra_id='run456')
+        self.assertEqual(len(calls), 1)
+
     def test_trading_scope_and_text_sources(self):
+        self.assertGreaterEqual(len(self.quotes), 40)
+        self.assertEqual(len({q['quote'] for q in self.quotes}), len(self.quotes))
         for q in self.quotes:
             self.assertEqual(q['scope'], '交易心态')
             self.assertTrue(q['theme'])
