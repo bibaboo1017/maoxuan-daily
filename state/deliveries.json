@@ -10,5 +10,12 @@
     "date": "2026-09-19",
     "kind": "extra",
     "receipt": "15f2907f70e64bda947d034fb24fcd17"
+  },
+  "2026-09-20": {
+    "quote_id": "investigation-1",
+    "status": "accepted",
+    "date": "2026-09-20",
+    "kind": "daily",
+    "receipt": "488c69f6f9174a6ca868371423194ba4"
   }
 }
