@@ -45,5 +45,12 @@
     "date": "2026-09-24",
     "kind": "daily",
     "receipt": "a8fc13a617824921856b958bdcb81f1f"
+  },
+  "2026-09-25": {
+    "quote_id": "discipline-1",
+    "status": "accepted",
+    "date": "2026-09-25",
+    "kind": "daily",
+    "receipt": "4323080edeb343d983fb7e9f8d510789"
   }
 }
