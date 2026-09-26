@@ -52,5 +52,12 @@
     "date": "2026-09-25",
     "kind": "daily",
     "receipt": "4323080edeb343d983fb7e9f8d510789"
+  },
+  "2026-09-26": {
+    "quote_id": "investigation-2",
+    "status": "accepted",
+    "date": "2026-09-26",
+    "kind": "daily",
+    "receipt": "396c0cc539444f99a193a1a6730e074c"
   }
 }
