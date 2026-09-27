@@ -59,5 +59,12 @@
     "date": "2026-09-26",
     "kind": "daily",
     "receipt": "396c0cc539444f99a193a1a6730e074c"
+  },
+  "2026-09-27": {
+    "quote_id": "practice-2",
+    "status": "accepted",
+    "date": "2026-09-27",
+    "kind": "daily",
+    "receipt": "c5dc028d39fb405b8191ad287a583cbb"
   }
 }
