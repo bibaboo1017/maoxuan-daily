@@ -66,5 +66,12 @@
     "date": "2026-09-27",
     "kind": "daily",
     "receipt": "c5dc028d39fb405b8191ad287a583cbb"
+  },
+  "2026-09-28": {
+    "quote_id": "committee-2",
+    "status": "accepted",
+    "date": "2026-09-28",
+    "kind": "daily",
+    "receipt": "954e3ec1d41f4578965b854e424a997b"
   }
 }
