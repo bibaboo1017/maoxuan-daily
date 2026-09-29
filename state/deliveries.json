@@ -73,5 +73,12 @@
     "date": "2026-09-28",
     "kind": "daily",
     "receipt": "954e3ec1d41f4578965b854e424a997b"
+  },
+  "2026-09-29": {
+    "quote_id": "study-2",
+    "status": "accepted",
+    "date": "2026-09-29",
+    "kind": "daily",
+    "receipt": "14609b23cba04f21ab8029b250ccd579"
   }
 }
