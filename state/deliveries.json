@@ -87,5 +87,12 @@
     "date": "2026-09-30",
     "kind": "daily",
     "receipt": "bb42ef06777840d6b121e5eeb3f82e76"
+  },
+  "2026-10-01": {
+    "quote_id": "mindset-12",
+    "status": "accepted",
+    "date": "2026-10-01",
+    "kind": "daily",
+    "receipt": "65da517a770843b7ac0daba90930fbfb"
   }
 }
