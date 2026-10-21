@@ -227,5 +227,12 @@
     "date": "2026-10-20",
     "kind": "daily",
     "receipt": "53e9a6f032b04b06980e98a25f45d5d9"
+  },
+  "2026-10-21": {
+    "quote_id": "mindset-32",
+    "status": "accepted",
+    "date": "2026-10-21",
+    "kind": "daily",
+    "receipt": "697e7420be814ec5a87c25b84f9e2bee"
   }
 }
