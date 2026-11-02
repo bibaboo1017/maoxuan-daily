@@ -311,5 +311,12 @@
     "date": "2026-11-01",
     "kind": "daily",
     "receipt": "30477f34cf8142bd8f9316d17a81fbf4"
+  },
+  "2026-11-02": {
+    "quote_id": "committee-1",
+    "status": "accepted",
+    "date": "2026-11-02",
+    "kind": "daily",
+    "receipt": "99f43c793c9441d69ca89118348ebe33"
   }
 }
