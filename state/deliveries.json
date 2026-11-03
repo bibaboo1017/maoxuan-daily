@@ -318,5 +318,12 @@
     "date": "2026-11-02",
     "kind": "daily",
     "receipt": "99f43c793c9441d69ca89118348ebe33"
+  },
+  "2026-11-03": {
+    "quote_id": "study-1",
+    "status": "accepted",
+    "date": "2026-11-03",
+    "kind": "daily",
+    "receipt": "7686c0f4ab124521b4425fa9e23e16b4"
   }
 }
