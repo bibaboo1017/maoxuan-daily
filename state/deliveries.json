@@ -346,5 +346,12 @@
     "date": "2026-11-06",
     "kind": "daily",
     "receipt": "1058ede3de8d4f00b02d4d19bcb0620d"
+  },
+  "2026-11-07": {
+    "quote_id": "committee-2",
+    "status": "accepted",
+    "date": "2026-11-07",
+    "kind": "daily",
+    "receipt": "9ab2cf07b1da4db1b2b3f3315ba0cbca"
   }
 }
