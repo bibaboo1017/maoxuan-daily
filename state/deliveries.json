@@ -451,5 +451,12 @@
     "date": "2026-11-21",
     "kind": "daily",
     "receipt": "bd3ff55d0c0748f48b2b6a848a5c23d0"
+  },
+  "2026-11-22": {
+    "quote_id": "mindset-24",
+    "status": "accepted",
+    "date": "2026-11-22",
+    "kind": "daily",
+    "receipt": "bef512195d18479c8d833f0560592c7f"
   }
 }
