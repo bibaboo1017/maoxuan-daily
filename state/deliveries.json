@@ -493,5 +493,12 @@
     "date": "2026-11-27",
     "kind": "daily",
     "receipt": "2dd980ddb47548b590a6f83b01b7e63d"
+  },
+  "2026-11-28": {
+    "quote_id": "mindset-30",
+    "status": "accepted",
+    "date": "2026-11-28",
+    "kind": "daily",
+    "receipt": "c8ed81e3f5904f4ab0df66b3c7484f1e"
   }
 }
